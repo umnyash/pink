@@ -1,0 +1,51 @@
+.burger {
+  position: relative;
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 0;
+    bottom: -12px;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    background-color: var(--background-color);
+    mask-image: url("../img/icons/stack.svg#burger");
+    transform-origin: right center;
+    transition:
+      width calc($main-header-navigation-opening-duration / 2) step-end,
+      mask-image calc($main-header-navigation-opening-duration / 2) step-end,
+      background-color $little-interaction-duration $little-interaction-timing-function,
+      opacity $little-interaction-duration $little-interaction-timing-function;
+  }
+
+  &:hover::after {
+    background-color: var(--accent-color);
+    will-change: width, transform;
+  }
+
+  &:active::after {
+    opacity: 0.3;
+  }
+
+  &--close::after {
+    width: 50%;
+    mask-image: url("../img/icons/stack.svg#x");
+  }
+
+  &--animated::after {
+    animation: clench-unclench $main-header-navigation-opening-duration ease-in-out;
+  }
+}

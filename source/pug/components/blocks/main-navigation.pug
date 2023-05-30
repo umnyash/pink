@@ -1,0 +1,11 @@
+mixin main-navigation__item(text, href, page)
+  li
+    a.main-navigation__link(class= pageClass === page ? 'main-navigation__link--current' : false href= pageClass === page ? false : href)&attributes(attributes)= text
+
+mixin main-navigation
+  ul.main-navigation&attributes(attributes)
+    +main-navigation__item('Главная', 'index.html', 'index-page')
+    +main-navigation__item('Фотографии', 'catalog.html', 'catalog-page')
+    +main-navigation__item('Конкурс', 'form.html', 'form-page')
+    li
+      a.main-navigation__link(href='https://htmlacademy.ru/intensive/adaptive' target='_blank' rel='nofollow noopener') HTML Academy

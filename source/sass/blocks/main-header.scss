@@ -1,0 +1,104 @@
+.main-header {
+  --main-header-inner-offset-height: 64px;
+  color: var(--text-alter-color);
+  background-color: var(--blackout);
+
+  @media (min-width: $tablet-width) {
+    --main-header-inner-offset-height: 110px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+}
+
+.main-header__navigation {
+  @media (max-width: ($desktop-width - 1)) {
+    position: relative;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    width: 940px;
+    margin: 0 auto;
+    grid-template-columns: auto 1fr;
+    column-gap: 100px;
+  }
+}
+
+.main-header__inner {
+  @media (max-width: ($desktop-width - 1)) {
+    display: flex;
+    padding: 28px 20px 42px;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: background-color calc($main-header-navigation-opening-duration / 2) step-end;
+  }
+
+  @media (max-width: ($tablet-width - 1)) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.main-header__logo {
+  position: relative;
+  z-index: 1;
+  width: 74px;
+
+  @media (min-width: $tablet-width) {
+    width: 145px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 147px;
+  }
+}
+
+.main-header__burger {
+  position: relative;
+  z-index: 1;
+  width: 48px;
+  height: 24px;
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.main-header__main-menu {
+  margin: 0;
+  width: 100%;
+
+  @media (max-width: ($desktop-width - 1)) {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transform: translateY(calc(-100% - var(--main-header-inner-offset-height)));
+    transition: transform $main-header-navigation-opening-duration ease-in-out;
+  }
+}
+
+.main-header__navigation--open,
+.main-header__navigation--no-js {
+  @media (max-width: ($desktop-width - 1)) {
+    .main-header__inner {
+      background-color: var(--background-alter-additional-color);
+    }
+
+    .main-header__main-menu {
+      transform: none;
+    }
+  }
+}
+
+.main-header__navigation--no-js {
+  .main-header__burger {
+    display: none;
+  }
+
+  .main-header__main-menu {
+    position: static;
+  }
+}

@@ -1,0 +1,24 @@
+:root {
+  --text-color: #283645;
+  --text-strong-color: #000000;
+  --text-alter-color: #ffffff;
+  --text-alter-color-30: rgba(255, 255, 255, 0.3);
+  --background-color: #ffffff;
+  --background-additional-color: #f2f2f2;
+  --background-alter-color: #1d2631;
+  --background-alter-additional-color: #283645;
+  --accent-color: #d22856;
+  --shine: rgba(255, 255, 255, 0.15);
+  --dark: #000000;
+  --blackout: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
