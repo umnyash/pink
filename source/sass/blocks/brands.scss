@@ -1,0 +1,43 @@
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 20px 36px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.brands__logo {
+  display: block;
+  max-width: 48px;
+  height: auto;
+  transition-property: opacity, transform;
+  transition-duration: $little-interaction-duration, calc($little-interaction-duration / 2);
+  transition-timing-function: $little-interaction-timing-function, ease-in;
+}
+
+.brands__item {
+  &--android {
+    margin-top: 4px;
+  }
+
+  &--microsoft {
+    margin-top: 10px;
+  }
+}
+
+.brands__link {
+  &:hover .brands__logo {
+    transform: translateZ(0) translateY(-8px);
+    transition-duration: $little-interaction-duration;
+    transition-timing-function: $little-interaction-timing-function, ease-out;
+  }
+
+  &:active .brands__logo {
+    opacity: 0.3;
+    transform: translateZ(0) translateY(-8px);
+    transition-duration: $little-interaction-duration;
+    transition-timing-function: $little-interaction-timing-function, ease-out;
+  }
+}

@@ -1,0 +1,10 @@
+mixin brands__item(href, img, alt, width, height)
+  li.brands__item&attributes(attributes)
+    a.brands__link(href= href target='_blank' rel='nofollow noopener')
+      img.brands__logo(src= img width= width height= height alt= alt)
+
+mixin brands
+  ul.brands&attributes(attributes)
+    +brands__item('https://www.apple.com/ru/app-store', 'img/icons/stack.svg#os_ios', 'Логотип в виде белого яблока.', 47, 56)
+    +brands__item('https://play.google.com/store/apps', 'img/icons/stack.svg#os_android', 'Логотип в виде зелёного робота.', 43, 47)(class='brands__item--android')
+    +brands__item('https://apps.microsoft.com/store/apps', 'img/icons/stack.svg#os_microsoft', 'Логотип в виде четырёх цветных квадратов (оранжевого, зелёного, голубого и жёлтого), расположенных в два ряда.', 44, 41)(class='brands__item--microsoft')

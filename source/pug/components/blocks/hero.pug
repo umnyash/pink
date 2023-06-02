@@ -1,0 +1,27 @@
+mixin hero
+  section.hero&attributes(attributes)
+    h2.visually-hidden Скачать
+    picture.hero__background-wripper(aria-hidden='true')
+      source(type='image/webp' media='(min-width: 1441px)' srcset='img/hero/hero-bg-wide-desktop.webp 1x, img/hero/hero-bg-wide-desktop@2x.webp 2x')
+      source(type='image/webp' media='(min-width: 1025px)' srcset='img/hero/hero-bg-desktop.webp 1x, img/hero/hero-bg-desktop@2x.webp 2x')
+      source(type='image/webp' media='(min-width: 661px)' srcset='img/hero/hero-bg-wide-tablet.webp 1x, img/hero/hero-bg-wide-tablet@2x.webp 2x')
+      source(type='image/webp' media='(min-width: 421px)' srcset='img/hero/hero-bg-tablet.webp 1x, img/hero/hero-bg-tablet@2x.webp 2x')
+      source(type='image/webp' media='(min-width: 321px)' srcset='img/hero/hero-bg-wide-mobile.webp 1x, img/hero/hero-bg-wide-mobile@2x.webp 2x')
+      source(type='image/webp' srcset='img/hero/hero-bg.webp 1x, img/hero/hero-bg@2x.webp 2x')
+      source(media='(min-width: 1441px)' srcset='img/hero/hero-bg-wide-desktop.jpg 1x, img/hero/hero-bg-wide-desktop@2x.jpg 2x')
+      source(media='(min-width: 1025px)' srcset='img/hero/hero-bg-desktop.jpg 1x, img/hero/hero-bg-desktop@2x.jpg 2x')
+      source(media='(min-width: 661px)' srcset='img/hero/hero-bg-wide-tablet.jpg 1x, img/hero/hero-bg-wide-tablet@2x.jpg 2x')
+      source(media='(min-width: 421px)' srcset='img/hero/hero-bg-tablet.jpg 1x, img/hero/hero-bg-tablet@2x.jpg 2x')
+      source(media='(min-width: 321px)' srcset='img/hero/hero-bg-wide-mobile.jpg 1x, img/hero/hero-bg-wide-mobile@2x.jpg 2x')
+      img.hero__background(src='img/hero/hero-bg.jpg' srcset='img/hero/hero-bg@2x.jpg 2x' alt='Фотография улицы.')
+    p.hero__slogan Взгляните на&nbsp;жизнь иначе!
+    picture.hero__image-wripper
+      source(type='image/webp' media='(min-width: 980px)' srcset='img/hero/hero-desktop.webp 1x, img/hero/hero-desktop@2x.webp 2x')
+      source(type='image/webp' media='(min-width: 660px)' srcset='img/hero/hero-tablet.webp 1x, img/hero/hero-tablet@2x.webp 2x')
+      source(type='image/webp' srcset='img/hero/hero.webp 1x, img/hero/hero@2x.webp 2x')
+      source(media='(min-width: 980px)' srcset='img/hero/hero-desktop.png 1x, img/hero/hero-desktop@2x.png 2x')
+      source(media='(min-width: 660px)' srcset='img/hero/hero-tablet.png 1x, img/hero/hero-tablet@2x.png 2x')
+      img.hero__image(src='img/hero/hero.png' srcset='img/hero/hero@2x.png 2x' alt='На экране смартфона фотография с розовым фотофильтром.')
+    +main-button('a', 'Скачать приложение', '', 'https://www.apple.com/ru/app-store/', '_blank', 'nofollow noopener')(class='hero__button main-button--alter main-button--growing')
+    +brands(class='hero__brands')
+    p.hero__text Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8

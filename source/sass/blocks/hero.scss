@@ -1,0 +1,141 @@
+$text-column-width: 300px;
+
+.hero {
+  display: grid;
+  grid-template-rows: calc(var(--page-header-offset-height) + 24px);
+  grid-template-columns: $page-side-padding 1fr $page-side-padding;
+  grid-template-areas:
+    ".     .      .   "
+    ".     slogan .   "
+    "image image image";
+  justify-items: center;
+  text-align: center;
+  font-weight: 300;
+  color: var(--text-alter-color);
+  background-color: var(--background-alter-color);
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: calc(var(--page-header-offset-height) + 74px) repeat(3, auto) 1fr;
+    grid-template-columns: $page-side-padding $text-column-width 1fr $page-side-padding;
+    grid-template-areas:
+      ".     .      ."
+      ".     slogan ."
+      ".     button ."
+      ".     brands ."
+      ".     text   .";
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: calc(var(--page-header-offset-height) + 98px) repeat(3, auto) 1fr;
+    grid-template-columns: 1fr $text-column-width calc($centerer-max-width - $text-column-width) 1fr;
+  }
+}
+
+.hero * {
+  z-index: 1;
+  grid-column: 2 / 3;
+}
+
+.hero__background-wripper {
+  position: relative;
+  z-index: 0;
+  grid-row: 1 / 6;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__slogan {
+  grid-area: slogan;
+  margin: 0 0 28px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: inherit;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 20px;
+    margin-bottom: 32px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+    margin-bottom: 36px;
+    font-size: 50px;
+    line-height: 68px;
+  }
+}
+
+.hero__image-wripper {
+  grid-area: image;
+  align-self: end;
+
+  @media (min-width: $tablet-width) {
+    grid-row: 2 / 6;
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 140px;
+  }
+}
+
+.hero__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero__button {
+  width: 100%;
+  max-width: 300px;
+  margin: 28px 0 32px;
+
+  @media (min-width: $tablet-width) {
+    grid-area: button;
+    margin-top: 0;
+    margin-bottom: 44px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 68px;
+  }
+}
+
+.hero__brands {
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet-width) {
+    grid-area: brands;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 52px;
+  }
+}
+
+.hero__text {
+  margin: 0 0 32px;
+
+  @media (min-width: $tablet-width) {
+    grid-area: text;
+    margin-bottom: 44px;
+    font-size: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 68px;
+  }
+}
