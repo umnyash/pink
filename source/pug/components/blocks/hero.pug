@@ -16,10 +16,10 @@ mixin hero
       img.hero__background(src='img/hero/hero-bg.jpg' srcset='img/hero/hero-bg@2x.jpg 2x' alt='Фотография улицы.')
     p.hero__slogan Взгляните на&nbsp;жизнь иначе!
     picture.hero__image-wripper
-      source(type='image/webp' media='(min-width: 980px)' srcset='img/hero/hero-desktop.webp 1x, img/hero/hero-desktop@2x.webp 2x')
+      source(type='image/webp' media='(min-width: 1000px)' srcset='img/hero/hero-desktop.webp 1x, img/hero/hero-desktop@2x.webp 2x')
       source(type='image/webp' media='(min-width: 660px)' srcset='img/hero/hero-tablet.webp 1x, img/hero/hero-tablet@2x.webp 2x')
       source(type='image/webp' srcset='img/hero/hero.webp 1x, img/hero/hero@2x.webp 2x')
-      source(media='(min-width: 980px)' srcset='img/hero/hero-desktop.png 1x, img/hero/hero-desktop@2x.png 2x')
+      source(media='(min-width: 1000px)' srcset='img/hero/hero-desktop.png 1x, img/hero/hero-desktop@2x.png 2x')
       source(media='(min-width: 660px)' srcset='img/hero/hero-tablet.png 1x, img/hero/hero-tablet@2x.png 2x')
       img.hero__image(src='img/hero/hero.png' srcset='img/hero/hero@2x.png 2x' alt='На экране смартфона фотография с розовым фотофильтром.')
     +main-button('a', 'Скачать приложение', '', 'https://www.apple.com/ru/app-store/', '_blank', 'nofollow noopener')(class='hero__button main-button--alter main-button--growing')
