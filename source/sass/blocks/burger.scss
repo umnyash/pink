@@ -22,11 +22,12 @@
     height: 100%;
     margin-left: auto;
     background-color: var(--background-color);
-    mask-image: url("../img/icons/stack.svg#burger");
+    mask-image: url("../img/icons/stack.svg#burger"), url("../img/icons/stack.svg#x");
+    mask-size: 100%, 0;
     transform-origin: right center;
     transition:
       width calc($main-header-navigation-opening-duration / 2) step-end,
-      mask-image calc($main-header-navigation-opening-duration / 2) step-end,
+      mask-size calc($main-header-navigation-opening-duration / 2) step-end,
       background-color $little-interaction-duration $little-interaction-timing-function,
       opacity $little-interaction-duration $little-interaction-timing-function;
   }
@@ -41,8 +42,8 @@
   }
 
   &--close::after {
+    mask-size: 0, 100%;
     width: 50%;
-    mask-image: url("../img/icons/stack.svg#x");
   }
 
   &--animated::after {
