@@ -22,4 +22,11 @@ body {
   line-height: 24px;
   color: var(--text-color);
   background-color: var(--background-color);
+
+  padding-bottom: 100px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+    line-height: 30px;
+  }
 }

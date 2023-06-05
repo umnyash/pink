@@ -1,0 +1,28 @@
+mixin heading__lines(text)
+  each line, index in text
+    if index > 0
+      span.heading__line!= text[index]
+
+mixin heading(headingLevel, ...text)
+  case headingLevel
+    when 1
+      h1.heading&attributes(attributes)!= text[0]
+        +heading__lines(text)
+    when 2
+      h2.heading&attributes(attributes)!= text[0]
+        +heading__lines(text)
+    when 3
+      h3.heading&attributes(attributes)!= text[0]
+        +heading__lines(text)
+    when 4
+      h4.heading&attributes(attributes)!= text[0]
+        +heading__lines(text)
+    when 5
+      h5.heading&attributes(attributes)!= text[0]
+        +heading__lines(text)
+    when 6
+      h6.heading&attributes(attributes)!= text[0]
+        +heading__lines(text)
+    default
+      p.heading&attributes(attributes)!= text[0]
+        +heading__lines(text)

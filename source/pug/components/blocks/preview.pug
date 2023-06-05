@@ -1,0 +1,11 @@
+mixin preview(heading, headingLevel, text, link, href)
+  section.preview&attributes(attributes)
+    case headingLevel
+      when 2
+        h2.preview__heading!= heading
+      when 3
+        h3.preview__heading!= heading
+      default
+        p.preview__heading!= heading
+    p.preview__text!= text
+    a.preview__link(href= href)= link

@@ -16,3 +16,15 @@
   z-index: 0;
   margin-top: calc(var(--page-header-offset-height) * -1);
 }
+
+.page__hero {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 62px;
+  }
+}

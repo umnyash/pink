@@ -1,0 +1,35 @@
+.preview__heading {
+  margin: 0 0 12px;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: var(--text-strong-color);
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 24px;
+  }
+}
+
+.preview__text {
+  margin: 0 0 12px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 28px;
+  }
+}
+
+.preview__link {
+  color: var(--accent-color);
+  transition:
+    color $little-interaction-duration $little-interaction-timing-function,
+    opacity $little-interaction-duration $little-interaction-timing-function;
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:active {
+    color: inherit;
+    opacity: 0.3;
+  }
+}

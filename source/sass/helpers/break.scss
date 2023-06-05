@@ -1,0 +1,19 @@
+/*
+ * --m-t – отображать только на мобильной (m) и планшетной (t) ширине
+ * --d   – отображать только на десктопной (d) ширине
+ * и так далее.
+ */
+
+.break {
+  &--m-t {
+    @media (min-width: $desktop-width) {
+      display: none;
+    }
+  }
+
+  &--d {
+    @media (max-width: ($desktop-width - 1)) {
+      display: none;
+    }
+  }
+}
