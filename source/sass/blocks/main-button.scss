@@ -19,7 +19,7 @@
     background-size $little-interaction-duration $little-interaction-timing-function;
 
   &--growing {
-    @media (min-width: $desktop-width) {
+    @media (min-width: $laptop-width) {
       padding-top: 11px;
       padding-bottom: 11px;
       font-size: 21px;

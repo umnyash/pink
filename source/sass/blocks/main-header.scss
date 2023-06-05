@@ -2,18 +2,18 @@
   color: var(--text-alter-color);
   background-color: var(--blackout);
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     padding-top: 28px;
     padding-bottom: 28px;
   }
 }
 
 .main-header__navigation {
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     position: relative;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     display: grid;
     width: 940px;
     margin: 0 auto;
@@ -23,7 +23,7 @@
 }
 
 .main-header__inner {
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     display: flex;
     padding: 28px 20px 42px;
     justify-content: space-between;
@@ -46,7 +46,7 @@
     width: 145px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     width: 147px;
   }
 }
@@ -57,7 +57,7 @@
   width: 48px;
   height: 24px;
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     display: none;
   }
 }
@@ -66,7 +66,7 @@
   margin: 0;
   width: 100%;
 
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     position: absolute;
     left: 0;
     top: 100%;
@@ -77,7 +77,7 @@
 
 .main-header__navigation--open,
 .main-header__navigation--no-js {
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     .main-header__inner {
       background-color: var(--background-alter-additional-color);
     }

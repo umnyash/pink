@@ -41,13 +41,13 @@
   }
 
   &--basic {
-    @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1)) {
+    @media (min-width: $tablet-width) and (max-width: ($laptop-width - 1)) {
       display: block;
     }
   }
 
   &--full {
-    @media (min-width: $desktop-width) {
+    @media (min-width: $laptop-width) {
       display: block;
     }
   }
@@ -55,13 +55,13 @@
 
 .logo--set_basic-basic-full .logo__image {
   &--basic {
-    @media (max-width: ($desktop-width - 1)) {
+    @media (max-width: ($laptop-width - 1)) {
       display: block;
     }
   }
 
   &--full {
-    @media (min-width: $desktop-width) {
+    @media (min-width: $laptop-width) {
       display: block;
     }
   }

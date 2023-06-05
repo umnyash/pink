@@ -5,7 +5,7 @@
   font-weight: 700;
   color: var(--text-strong-color);
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     margin-bottom: 24px;
   }
 }
@@ -13,7 +13,7 @@
 .preview__text {
   margin: 0 0 12px;
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     margin-bottom: 28px;
   }
 }

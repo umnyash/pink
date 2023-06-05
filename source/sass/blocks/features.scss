@@ -1,5 +1,5 @@
 .features {
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     display: grid;
     justify-items: center;
   }
@@ -9,7 +9,7 @@
   margin: 0 0 40px;
   padding: 0 $page-side-padding;
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     width: 940px;
     padding: 0;
   }
@@ -33,7 +33,7 @@
     text-align: left;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     width: 910px;
     padding: 0;
     grid-template-columns: repeat(3, 1fr);
@@ -54,7 +54,7 @@
   font-weight: 700;
   color: var(--text-strong-color);
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     margin-bottom: 24px;
     font-size: 30px;
     line-height: 36px;
@@ -64,7 +64,7 @@
 .features__text {
   margin: 0;
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     margin-right: 8px;
     margin-left: 8px;
   }
@@ -83,7 +83,7 @@
     margin-top: 0;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     position: relative;
     left: 0;
     order: -1;
@@ -117,7 +117,7 @@
 }
 
 .features__item:not(:last-child) .features__image-wrapper {
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     display: none;
   }
 }
@@ -135,7 +135,7 @@
     background: url("../img/icons/stack.svg#24-hours") no-repeat 20px center / 238px auto;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     width: 940px;
     min-height: 345px;
     padding-top: 44px;
@@ -153,7 +153,7 @@
     "list"
     "banner";
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     grid-template-rows: repeat(3, auto) 66px;
   }
 
@@ -170,7 +170,7 @@
       clip-path: polygon(0 53px, 100% 0, 100% 100%, 0 100%);
     }
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $laptop-width) {
       grid-row: 2 / -1;
       clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
     }
@@ -184,7 +184,7 @@
       margin-bottom: 32px;
     }
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $laptop-width) {
       margin-bottom: 52px;
     }
   }
@@ -193,7 +193,7 @@
     grid-area: list;
     padding-top: 76px;
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $laptop-width) {
       padding-top: 8px;
     }
   }

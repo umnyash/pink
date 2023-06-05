@@ -5,14 +5,14 @@
   line-height: 32px;
   list-style: none;
 
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     border-top: 1px solid var(--dark);
     font-weight: 700;
     text-transform: uppercase;
     background-color: var(--background-alter-additional-color);
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     display: flex;
     flex-wrap: wrap;
     gap: 16px 80px;
@@ -36,12 +36,12 @@
     color: var(--text-alter-color-30);
   }
 
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     border-top: 1px solid var(--shine);
     border-bottom: 1px solid var(--dark);
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     padding: 12px 0;
     border-bottom: 2px solid transparent;
   }
@@ -50,12 +50,12 @@
 .main-navigation__link--current {
   pointer-events: none;
 
-  @media (max-width: ($desktop-width - 1)) {
+  @media (max-width: ($laptop-width - 1)) {
     border-color: transparent;
     background-color: var(--background-alter-color);
   }
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: $laptop-width) {
     border-bottom-color: currentColor;
   }
 }
