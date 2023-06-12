@@ -1,0 +1,5 @@
+mixin review(review)
+  li.review&attributes(attributes)
+    h3.review__heading= review.author
+    p.review__subheading= review.info
+    blockquote.review__text= review.text

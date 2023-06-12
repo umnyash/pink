@@ -28,3 +28,27 @@
     margin-bottom: 62px;
   }
 }
+
+.page__features {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 100px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 72px;
+  }
+}
+
+.page__reviews {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 32px;
+  }
+}

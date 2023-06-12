@@ -1,0 +1,27 @@
+.prices--decorated {
+  padding: 100px 0 46px;
+  background-color: var(--background-additional-color);
+  clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 68px;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+  }
+
+  @media (min-width: $laptop-width) {
+    padding-top: 156px;
+    padding-bottom: 96px;
+    clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.prices__table {
+  @media (min-width: $tablet-width) {
+    max-width: calc(100% - $page-side-padding - $page-side-padding);
+    margin: 0 auto;
+  }
+
+  @media (min-width: $laptop-width) {
+    max-width: $centerer-max-width;
+  }
+}

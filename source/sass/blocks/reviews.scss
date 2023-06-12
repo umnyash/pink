@@ -1,0 +1,69 @@
+$reviews-slider-desktop-padding-width: 100px;
+
+.reviews__slider {
+  @media (min-width: $laptop-width) {
+    position: relative;
+    padding: 112px $reviews-slider-desktop-padding-width 0;
+    background: url("../img/icons/stack.svg#quotes") no-repeat center top / 80px 64px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      width: $reviews-slider-desktop-padding-width;
+      background-image: linear-gradient(to right, var(--background-color) 50%, transparent);
+    }
+
+    &::before {
+      left: 0;
+      background-image: linear-gradient(to right, var(--background-color) 50%, transparent);
+    }
+
+    &::after {
+      right: 0;
+      background-image: linear-gradient(to left, var(--background-color) 50%, transparent);
+    }
+  }
+}
+
+.reviews__list {
+  padding: 0;
+  margin: 0;
+}
+
+.reviews__slider-navigation.reviews__slider-navigation { // (1)
+  @media (max-width: ($laptop-width - 1)) {
+    display: none;
+  }
+
+  @media (min-width: $laptop-width) {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+    margin: 0;
+  }
+}
+
+.reviews__slider-pagination.reviews__slider-pagination { // (2)
+  margin: 30px 0 0;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 36px;
+  }
+
+  @media (min-width: $laptop-width) {
+    display: none;
+  }
+}
+
+/*
+ * (1), (2) – увеличение специфичности селекторов, так как у блоков задано своё значение свойства display.
+ * Вместо этого можно было бы отказаться от миксования и поместить блоки внуть
+ * дополнительных тегов – элементов родительского блока.
+ */

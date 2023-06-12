@@ -1,0 +1,64 @@
+.slider-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  visibility: hidden;
+}
+
+.slider-navigation__button {
+  position: relative;
+  width: 22px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  visibility: visible;
+  transition: outline-color $little-interaction-duration $little-interaction-timing-function;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 100%;
+    background-color: currentColor;
+    mask-image: url("../img/icons/stack.svg#slider-arrow");
+    opacity: 0.3;
+    transition: opacity $little-interaction-duration $little-interaction-timing-function;
+  }
+
+  &:hover::after {
+    opacity: 0.6;
+  }
+
+  &:active::after {
+    opacity: 0.1;
+  }
+
+  &:focus-visible {
+    outline-color: var(--accent-color);
+  }
+
+  &--disabled {
+    pointer-events: none;
+
+    &::after {
+      opacity: 0.1;
+    }
+  }
+
+  &--prev {
+    transform: scale(-1);
+  }
+}

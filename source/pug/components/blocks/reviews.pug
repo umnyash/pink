@@ -1,0 +1,12 @@
+include ../../data/reviews-data
+
+mixin reviews
+  section.reviews&attributes(attributes)
+    .reviews__container.container
+      h2.visually-hidden Отзывы
+      .reviews__slider.swiper(data-slide-name='Отзыв')
+        ul.reviews__list.swiper-wrapper
+          each review in reviews
+            +review(review)(class='swiper-slide')
+        +slider-navigation('Предыдущий отзыв', 'Следующий отзыв')(class='reviews__slider-navigation')
+        p.reviews__slider-pagination.slider-pagination

@@ -1,0 +1,6 @@
+mixin slider-navigation(prevButtonText, nextButtonText)
+  p.slider-navigation&attributes(attributes)
+    button.slider-navigation__button.slider-navigation__button--prev
+      span.visually-hidden= prevButtonText
+    button.slider-navigation__button.slider-navigation__button--next
+      span.visually-hidden= nextButtonText

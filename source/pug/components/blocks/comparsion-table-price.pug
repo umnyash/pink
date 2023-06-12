@@ -1,0 +1,41 @@
+mixin comparsion-table-price
+  table.slider-table.comparsion-table(data-table-class='comparsion-table' data-slide-name='Колонка' data-column-gap='2' data-slider-breakpoint='660' data-initial-slide='1')&attributes(attributes)
+    thead.comparsion-table__header
+      tr.comparsion-table__header-row
+        th.visually-hidden(scope='col') Комплект
+        th.comparsion-table__header-cell(scope='col') Розовый фильтр
+        th.comparsion-table__header-cell(scope='col') Смайлики
+        th.comparsion-table__header-cell(scope='col') Комментарии
+    tbody.slider-table__body.comparsion-table__cards
+      tr.slider-table__row.comparsion-table__card
+        th.comparsion-table__card-header(scope='row') База
+          p.comparsion-table__card-subheading.nobr #[span.visually-hidden Цена:] 1,99 USD
+        td.comparsion-table__card-cell.comparsion-table__card-cell--true(data-text='Розовый фильтр')
+          p.visually-hidden Есть
+        td.comparsion-table__card-cell.comparsion-table__card-cell--false(data-text='Смайлики')
+          p.visually-hidden Нет
+        td.comparsion-table__card-cell.comparsion-table__card-cell--false(data-text='Комментарии')
+          p.visually-hidden Нет
+      tr.slider-table__row.comparsion-table__card
+        th.comparsion-table__card-header(scope='row') Стандарт
+          p.comparsion-table__card-subheading.nobr #[span.visually-hidden Цена:] 3,99 USD
+          p.comparsion-table__label
+            span.comparsion-table__label-text Хит
+        td.comparsion-table__card-cell.comparsion-table__card-cell--true(data-text='Розовый фильтр')
+          p.visually-hidden Есть
+        td.comparsion-table__card-cell.comparsion-table__card-cell--true(data-text='Смайлики')
+          p.visually-hidden Есть
+        td.comparsion-table__card-cell.comparsion-table__card-cell--false(data-text='Комментарии')
+          p.visually-hidden Нет
+      tr.slider-table__row.comparsion-table__card
+        th.comparsion-table__card-header(scope='row') Анлим
+          p.comparsion-table__card-subheading.nobr #[span.visually-hidden Цена:] 9,99 USD
+        td.comparsion-table__card-cell.comparsion-table__card-cell--true(data-text='Розовый фильтр')
+          p.visually-hidden Есть
+        td.comparsion-table__card-cell.comparsion-table__card-cell--true(data-text='Смайлики')
+          p.visually-hidden Есть
+        td.comparsion-table__card-cell.comparsion-table__card-cell--true(data-text='Комментарии')
+          p.visually-hidden Есть
+    tfoot.comparsion-table__footer(aria-hidden='true')
+      tr.comparsion-table__footer-inner
+        td.slider-table__pagination.comparsion-table__slider-pagination.slider-pagination(colspan='4')

@@ -9,6 +9,7 @@ export default {
       `${pathSrc}/fonts/**/*.*`,
       `${pathSrc}/*.ico`,
       `${pathSrc}/*.webmanifest`,
+      `${pathSrc}/vendor/**/*.*`,
     ],
     watch: [
       `${pathSrc}/fonts/**/*.*`,

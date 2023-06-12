@@ -8,6 +8,7 @@ html.page(class= pageClass lang='ru')
     link(rel='preload' href='fonts/open-sans-300.woff2' as='font' type='font/woff2' crossorigin)
     link(rel='preload' href='fonts/open-sans-400.woff2' as='font' type='font/woff2' crossorigin)
     link(rel='preload' href='fonts/open-sans-700.woff2' as='font' type='font/woff2' crossorigin)
+    link(rel='stylesheet' href='vendor/swiper/swiper.min.css')
     link(rel='stylesheet' href='css/style.css')
     title= title
   body.page__body
@@ -17,4 +18,5 @@ html.page(class= pageClass lang='ru')
         +main-header(class='page__header')
         main.page__content
           block content
+        script(src='vendor/swiper/swiper-bundle.min.js')
         script(src='js/main.js')
