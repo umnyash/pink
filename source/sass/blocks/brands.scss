@@ -28,6 +28,11 @@
 }
 
 .brands__link {
+  display: block;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color $little-interaction-duration $little-interaction-timing-function;
+
   &:hover .brands__logo {
     transform: translateZ(0) translateY(-8px);
     transition-duration: $little-interaction-duration;
@@ -39,5 +44,9 @@
     transform: translateZ(0) translateY(-8px);
     transition-duration: $little-interaction-duration;
     transition-timing-function: $little-interaction-timing-function, ease-out;
+  }
+
+  &:focus-visible {
+    outline-color: var(--accent-color);
   }
 }

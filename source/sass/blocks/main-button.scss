@@ -13,10 +13,17 @@
   background-repeat: no-repeat;
   background-size: 100% 0;
   background-position: center;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
   cursor: pointer;
   transition:
     color $little-interaction-duration $little-interaction-timing-function,
-    background-size $little-interaction-duration $little-interaction-timing-function;
+    background-size $little-interaction-duration $little-interaction-timing-function,
+    outline-color $little-interaction-duration $little-interaction-timing-function;
+
+  &:focus-visible {
+    outline-color: var(--accent-color);
+  }
 
   &--growing {
     @media (min-width: $laptop-width) {
@@ -79,6 +86,7 @@
   transition:
     color $little-interaction-duration $little-interaction-timing-function,
     background-size $little-interaction-duration $little-interaction-timing-function,
+    outline-color $little-interaction-duration $little-interaction-timing-function,
     opacity $little-interaction-duration $little-interaction-timing-function;
 
   &:hover {
