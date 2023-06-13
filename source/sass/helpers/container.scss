@@ -1,5 +1,5 @@
 .container {
-  max-width: $page-side-padding + $centerer-max-width + $page-side-padding;
+  max-width: $centerer-max-width;
   padding: 0 $page-side-padding;
   margin: 0 auto;
 }
