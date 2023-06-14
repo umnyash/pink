@@ -9,14 +9,14 @@ mixin features
         picture.features__image-wrapper
           source(type='image/webp' media='(min-width: 1000px)' srcset='img/demo/step-1-desktop.webp 1x, img/demo/step-1-desktop@2x.webp 2x')
           source(media='(min-width: 1000px)' srcset='img/demo/step-1-desktop.png 1x, img/demo/step-1-desktop@2x.png 2x')
-          img.features__image(src='#' alt='Серая унылая фотография.')
+          img.features__image(src='#' alt='Серая унылая фотография.' loading='lazy')
       li.features__item
         h3.features__heading Меняет мир вокруг
         p.features__text Сделайте снимок и&nbsp;украсьте его смайликом или текстовой подписью, чтобы усилить эффект
         picture.features__image-wrapper
           source(type='image/webp' media='(min-width: 1000px)' srcset='img/demo/step-2-desktop.webp 1x, img/demo/step-2-desktop@2x.webp 2x')
           source(media='(min-width: 1000px)' srcset='img/demo/step-2-desktop.png 1x, img/demo/step-2-desktop@2x.png 2x')
-          img.features__image(src='#' alt='Фотография с розовым фильтром.')
+          img.features__image(src='#' alt='Фотография с розовым фильтром.' loading='lazy')
       li.features__item
         h3.features__heading Заводит #[br.break.break--l] новых друзей
         p.features__text Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и&nbsp;заводите новых
@@ -26,6 +26,6 @@ mixin features
           source(type='image/webp' srcset='img/demo/step-3.webp 1x, img/demo/step-3@2x.webp 2x')
           source(media='(min-width: 1000px)' srcset='img/demo/step-3-desktop.png 1x, img/demo/step-3-desktop@2x.png 2x')
           source(media='(min-width: 660px)' srcset='img/demo/step-3-tablet.png 1x, img/demo/step-3-tablet@2x.png 2x')
-          img.features__image(src='img/demo/step-3.png' srcset='img/demo/step-3@2x.png 2x' alt='Фотография с розовым фильтром, смайликом и надписью «Всем привет!».')
+          img.features__image(src='img/demo/step-3.png' srcset='img/demo/step-3@2x.png 2x' alt='Фотография с розовым фильтром, смайликом и надписью «Всем привет!».' loading='lazy')
     .features__banner
       +preview('Эффект<br class="break break--m-t"> на 24 часа!', 3, 'Британские ученые провели исследования и&nbsp;доказали, что&nbsp;положительный эффект от&nbsp;использования приложения длится целые сутки!', 'Узнать больше об исследовании', '#!')
