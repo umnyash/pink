@@ -1,0 +1,25 @@
+mixin contacts
+  section.contacts&attributes(attributes)
+    .contacts__container.container
+      +heading(2, 'Остались вопросы?<br> Свяжитесь с нами!')(class='contacts__heading')
+      dl.contacts__list
+        .contacts__item
+          dt.contacts__name Звоните:
+          dd.contacts__value
+            +link('+7 (812) 555-66-66', 'tel:+78125556666')(class='contacts__link link--alter')
+        .contacts__item
+          dt.contacts__name Пишите:
+          dd.contacts__value
+            +link('mail@htmlacademy.ru', 'mailto:mail@htmlacademy.ru')(class='contacts__link link--alter')
+        .contacts__item
+          dt.contacts__name Приезжайте в гости:
+          dd.contacts__value ул. Большая#[br] Конюшенная, 19/8
+    .contacts__map-wrapper
+      picture.contacts__spare-map
+        source(type='image/webp' media='(min-width: 1000px)' srcset='img/maps/office-location-laptop.webp 1x, img/maps/office-location-laptop@2x.webp 2x')
+        source(type='image/webp' media='(min-width: 660px)' srcset='img/maps/office-location-tablet.webp 1x, img/maps/office-location-tablet@2x.webp 2x')
+        source(type='image/webp' srcset='img/maps/office-location.webp 1x, img/maps/office-location@2x.webp 2x')
+        source(media='(min-width: 1000px)' srcset='img/maps/office-location-laptop.png 1x, img/maps/office-location-laptop@2x.png 2x')
+        source(media='(min-width: 660px)' srcset='img/maps/office-location-tablet.png 1x, img/maps/office-location-tablet@2x.png 2x')
+        img.contacts__spare-map-image(src='img/maps/office-location.png' srcset='img/maps/office-location@2x.png 2x' alt='Расположение на карте по адресу: ул. Большая Конюшенная, 19/8' loading='lazy')
+      .contacts__main-map#office-location-map

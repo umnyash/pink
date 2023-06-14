@@ -1,0 +1,21 @@
+.link {
+  color: var(--accent-color);
+  transition:
+    color $little-interaction-duration $little-interaction-timing-function,
+    text-decoration-color $little-interaction-duration $little-interaction-timing-function;
+
+  &:hover {
+    color: var(--text-color);
+    text-decoration-color: currentColor;
+  }
+
+  &:active {
+    color: var(--text-color);
+    text-decoration-color: currentColor;
+    opacity: 0.3;
+  }
+}
+
+.link--alter {
+  text-decoration-color: transparent;
+}

@@ -1,0 +1,28 @@
+<svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateZ(0) scale(2.25);
+      }
+      70% {
+        opacity: 0;
+        transform: translateZ(0) scale(2.25);
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .backlight {
+      transform: translateZ(0);
+      transform-origin: 50% 50%;
+      animation: pulse 2s ease-out infinite;
+    }
+  </style>
+  <circle r="18" cx="50%" cy="50%" fill="#fff"/>
+  <circle class="backlight" r="8" cx="50%" cy="50%" fill="#d22856"/>
+  <circle r="8" cx="50%" cy="50%" fill="#d22856"/>
+</svg>

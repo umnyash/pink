@@ -10,6 +10,8 @@ html.page(class= pageClass lang='ru')
     link(rel='preload' href='fonts/open-sans-700.woff2' as='font' type='font/woff2' crossorigin)
     link(rel='stylesheet' href='vendor/swiper/swiper.min.css')
     link(rel='stylesheet' href='css/style.css')
+    if (pageClass === 'index-page')
+      script(src='https://api-maps.yandex.ru/2.1/?apikey=e6c045b8-c60b-415c-82d4-b4adf6e237da&lang=ru_RU')
     title= title
   body.page__body
     include ../components/components
