@@ -1,8 +1,11 @@
 .link {
   color: var(--accent-color);
+  outline: 2px solid transparent;
+  outline-offset: 4px;
   transition:
     color $little-interaction-duration $little-interaction-timing-function,
     text-decoration-color $little-interaction-duration $little-interaction-timing-function,
+    outline-color $little-interaction-duration $little-interaction-timing-function,
     opacity $little-interaction-duration $little-interaction-timing-function;
 
   &:hover {
@@ -14,6 +17,10 @@
     color: var(--text-color);
     text-decoration-color: currentColor;
     opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline-color: var(--accent-color);
   }
 }
 
