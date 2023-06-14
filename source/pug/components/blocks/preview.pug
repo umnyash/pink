@@ -8,4 +8,4 @@ mixin preview(heading, headingLevel, text, link, href)
       default
         p.preview__heading!= heading
     p.preview__text!= text
-    a.preview__link(href= href)= link
+    +link(link, href)
