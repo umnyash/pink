@@ -2,7 +2,8 @@
   color: var(--accent-color);
   transition:
     color $little-interaction-duration $little-interaction-timing-function,
-    text-decoration-color $little-interaction-duration $little-interaction-timing-function;
+    text-decoration-color $little-interaction-duration $little-interaction-timing-function,
+    opacity $little-interaction-duration $little-interaction-timing-function;
 
   &:hover {
     color: var(--text-color);
