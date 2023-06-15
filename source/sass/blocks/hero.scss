@@ -2,7 +2,7 @@ $text-column-width: 300px;
 
 .hero {
   display: grid;
-  grid-template-rows: calc(var(--page-header-offset-height) + 24px);
+  grid-template-rows: calc(var(--main-header-offset-height) + 24px);
   grid-template-columns: $page-side-padding 1fr $page-side-padding;
   grid-template-areas:
     ".     .      .   "
@@ -15,7 +15,7 @@ $text-column-width: 300px;
   background-color: var(--background-alter-color);
 
   @media (min-width: $tablet-width) {
-    grid-template-rows: calc(var(--page-header-offset-height) + 74px) repeat(3, auto) 1fr;
+    grid-template-rows: calc(var(--main-header-offset-height) + 74px) repeat(3, auto) 1fr;
     grid-template-columns: $page-side-padding $text-column-width 1fr $page-side-padding;
     grid-template-areas:
       ".     .      ."
@@ -26,7 +26,7 @@ $text-column-width: 300px;
   }
 
   @media (min-width: $laptop-width) {
-    grid-template-rows: calc(var(--page-header-offset-height) + 98px) repeat(3, auto) 1fr;
+    grid-template-rows: calc(var(--main-header-offset-height) + 98px) repeat(3, auto) 1fr;
     grid-template-columns: 1fr $text-column-width calc($centerer-max-width - $text-column-width) 1fr;
   }
 }

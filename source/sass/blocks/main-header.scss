@@ -70,7 +70,7 @@
     position: absolute;
     left: 0;
     top: 100%;
-    transform: translateY(calc(-100% - var(--page-header-offset-height)));
+    transform: translateY(calc(-100% - var(--main-header-offset-height)));
     transition: transform $main-header-navigation-opening-duration ease-in-out;
   }
 }

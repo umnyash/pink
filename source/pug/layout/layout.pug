@@ -17,9 +17,9 @@ html.page(class= pageClass lang='ru')
     include ../components/components
     .page__drawer
       .page__drawer-inner
-        +main-header(class='page__header')
+        +main-header(class='page__main-header')
         main.page__content
           block content
-        +main-footer(class='page__footer')
+        +main-footer(class='page__main-footer')
     script(src='vendor/swiper/swiper-bundle.min.js')
     script(src='js/main.js')
