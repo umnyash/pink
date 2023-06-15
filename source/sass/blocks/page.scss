@@ -60,3 +60,27 @@
     margin-bottom: 60px;
   }
 }
+
+.page__contacts {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 70px;
+  }
+}
+
+.page__footer {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 70px;
+  }
+}

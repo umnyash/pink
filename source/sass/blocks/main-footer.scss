@@ -1,0 +1,36 @@
+.main-footer__container {
+  display: grid;
+  row-gap: 38px;
+  justify-items: center;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 40% 1fr;
+    column-gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.main-footer__logo {
+  align-self: start;
+  width: 145px;
+
+  @media (min-width: $tablet-width) {
+    justify-self: start;
+    width: 147px;
+  }
+
+  @media (min-width: $laptop-width) {
+    width: 147px;
+  }
+}
+
+.main-footer__socials {
+  margin: 0;
+}
+
+.main-footer__developer {
+  @media (min-width: $tablet-width) {
+    justify-self: end;
+  }
+}
