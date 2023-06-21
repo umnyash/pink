@@ -5,6 +5,12 @@
  */
 
 .break {
+  &--m {
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+
   &--m-t {
     @media (min-width: $laptop-width) {
       display: none;

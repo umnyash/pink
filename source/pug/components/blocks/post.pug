@@ -1,0 +1,33 @@
+mixin post__content(post)
+  - var path = `img/photos/${post.panorama ? 'panoramas/' : ''}`;
+
+  if post.panorama
+    h2.post__label Панорама дня
+  a.post__photo-link(href= post.link)
+    picture.post__photo-wrapper
+      if post.panorama
+        source(type='image/webp' media='(min-width: 660px)' srcset=`${path}${post.imageLaptopWebp} 1x, ${path}${post.imageLaptopWebp2x} 2x`)
+        source(type='image/webp' media='(min-width: 421px)' srcset=`${path}${post.imageTabletWebp} 1x, ${path}${post.imageTabletWebp2x} 2x`)
+        source(type='image/webp' srcset=`${path}${post.imageWebp} 1x, ${path}${post.imageWebp2x} 2x`)
+        source(media='(min-width: 660px)' srcset=`${path}${post.imageLaptop} 1x, ${path}${post.imageLaptop2x} 2x`)
+        source(media='(min-width: 421px)' srcset=`${path}${post.imageTablet} 1x, ${path}${post.imageTablet2x} 2x`)
+      else
+        source(type='image/webp' media='(min-width: 660px)' srcset=`${path}${post.imageTabletWebp} 1x, ${path}${post.imageTabletWebp2x} 2x`)
+        source(type='image/webp' srcset=`${path}${post.imageWebp} 1x, ${path}${post.imageWebp2x} 2x`)
+        source(media='(min-width: 660px)' srcset=`${path}${post.imageTablet} 1x, ${path}${post.imageTablet2x} 2x`)
+      img.post__photo(src= `${path}${post.image}` srcset= `${path}${post.image2x} 2x` alt= post.imageDescription loading='lazy')
+  .post__text-content
+    footer.post__footer
+      p.post__author= post.author
+      time.post__date= `(${post.date})`
+    blockquote.post__text= post.text
+    +post-rating(post.likes)(class='post__rating')
+
+mixin post(post, tag)
+  case tag
+    when 'li'
+      li.post(class= post.panorama ? 'post--panorama' : '')&attributes(attributes)
+        +post__content(post)
+    default
+      article.post(class= post.panorama ? 'post--panorama' : '')&attributes(attributes)
+        +post__content(post)

@@ -84,3 +84,26 @@
     margin-bottom: 70px;
   }
 }
+
+.page__lead {
+  max-width: calc(100% - $page-side-padding - $page-side-padding);
+  margin: 0 auto 48px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 560px;
+    margin-bottom: 76px;
+  }
+
+  @media (min-width: $laptop-width) {
+    max-width: 640px;
+    margin-bottom: 88px;
+  }
+}
+
+.page__header {
+  margin-bottom: 44px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 92px;
+  }
+}

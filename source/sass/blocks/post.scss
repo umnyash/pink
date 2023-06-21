@@ -1,0 +1,149 @@
+.post {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.post__photo-link {
+  position: relative;
+  outline: none;
+  transition: opacity $little-interaction-duration $little-interaction-timing-function;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: 4px solid transparent;
+    outline-offset: -4px;
+    transition: outline-color $little-interaction-duration $little-interaction-timing-function;
+  }
+
+  &:focus-visible::after {
+    outline-color: var(--accent-color);
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.post__photo-wrapper {
+  display: block;
+  width: 100%;
+  height: 180px;
+
+  @media (min-width: $tablet-width) {
+    height: 300px;
+  }
+
+  @media (min-width: $laptop-width) {
+    height: 400px;
+  }
+}
+
+.post__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post__text-content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 18px 17px;
+  align-items: flex-start;
+  background-color: var(--background-additional-color);
+
+  @media (min-width: $tablet-width) {
+    min-height: 155px;
+    padding: 24px 28px;
+  }
+}
+
+.post__author {
+  display: inline;
+  font-weight: 700;
+}
+
+.post__date {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.post__text {
+  margin: 0 0 12px;
+}
+
+.post__rating {
+  margin: auto 0 0;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.post--panorama {
+  grid-template-columns: 1fr (minmax(280px, $centerer-max-width)) 1fr;
+  column-gap: $page-side-padding;
+
+  .post__label {
+    z-index: 1;
+    place-self: start end;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    padding: 6px 20px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-alter-color);
+    background-color: var(--accent-color);
+
+    @media (min-width: $tablet-width) {
+      margin-top: 56px;
+    }
+  }
+
+  .post__photo-link {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+  }
+
+  .post__photo-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+
+    @media (min-width: $tablet-width) {
+      height: 506px;
+    }
+  }
+
+  .post__text-content {
+    grid-column: 2 / 3;
+
+    @media (min-width: $tablet-width) {
+      display: grid;
+      min-height: auto;
+      grid-template-columns: 1fr auto;
+      grid-auto-flow: dense;
+    }
+  }
+
+  .post__text {
+    @media (min-width: $tablet-width) {
+      grid-column: 1 / -1;
+      margin: 0;
+    }
+  }
+}

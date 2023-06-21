@@ -1,0 +1,23 @@
+.post-rating {
+  display: flex;
+  column-gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row-reverse;
+  }
+}
+
+.post-rating__text {
+  margin: 0;
+}
+
+.post-rating__button {
+  width: 13px;
+  height: 12px;
+  transform: translateY(-1px);
+}

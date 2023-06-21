@@ -1,0 +1,4 @@
+mixin post-rating(value)
+  .post-rating&attributes(attributes)
+    +button-image('Добавить в избранное')(class='post-rating__button button-image--heart')
+    p.post-rating__text Нравится: #[span.post-rating__counter= value]

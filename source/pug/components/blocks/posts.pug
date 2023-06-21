@@ -1,0 +1,10 @@
+include ../../data/posts-data
+
+mixin posts
+  .posts&attributes(attributes)
+    +post(posts[0])(class='posts__panorama')
+    .posts__list-wrapper.container
+      ul.posts__list
+        each post, index in posts
+          if index > 0
+            +post(post, 'li')(class='posts__item')

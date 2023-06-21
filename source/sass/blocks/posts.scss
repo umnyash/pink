@@ -1,0 +1,30 @@
+.posts {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.posts__panorama {
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 48px;
+  }
+}
+
+.posts__list {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, 280px);
+  gap: 20px;
+  justify-content: center;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
+
+  @media (min-width: $laptop-width) {
+    row-gap: 48px;
+  }
+}

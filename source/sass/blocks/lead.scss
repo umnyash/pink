@@ -1,0 +1,9 @@
+.lead {
+  text-align: center;
+  font-size: 14px;
+  line-height: 30px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+  }
+}
