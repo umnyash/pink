@@ -107,3 +107,23 @@
     margin-bottom: 92px;
   }
 }
+
+.page__posts {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 64px;
+  }
+}
+
+.page__posting {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 100px;
+  }
+}

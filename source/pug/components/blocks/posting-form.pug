@@ -1,0 +1,11 @@
+mixin posting-form
+  form.posting-form(action='https://echo.htmlacademy.ru' method='post' enctype='multipart/form-data')&attributes(attributes)
+    fieldset.posting-form__photo-upload
+      label.posting-form__photo-field
+        span.posting-form__photo-field-label Фотография
+        input.posting-form__photo-field-control(name='photo' type='file' accept="image/png, image/jpg, image/jpeg, image/webp" required)
+      img.posting-form__photo(src='img/uploaded-photo-example.jpg' alt='Предварительный просмотр фотографии.')
+    +photo-settings(class='posting-form__photo-settings')
+    fieldset.posting-form__buttons
+      +main-button('button', 'Запостить', 'submit')(class='main-button--primary')
+      +main-button('button', 'Отмена', 'reset')(class='main-button--shy')

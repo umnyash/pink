@@ -1,0 +1,4 @@
+mixin range(label, name, value, min, max, step)
+  label.range&attributes(attributes)
+    span.visually-hidden= label
+    input.range__control(type='range' name= name value= value min= min max= max step= step)

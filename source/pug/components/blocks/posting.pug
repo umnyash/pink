@@ -1,0 +1,5 @@
+mixin posting
+  section.posting&attributes(attributes)
+    h2.visually-hidden Поделиться своей фотографией.
+    +lead('Затмите их всех!<br> Выкладывайте все, что накопилось в&nbsp;телефоне!')(class='posting__lead')
+    +posting-form(class='posting__form posting-form--decorated')

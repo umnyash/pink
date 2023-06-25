@@ -1,0 +1,19 @@
+.posting__lead {
+  max-width: calc(100% - $page-side-padding - $page-side-padding);
+  margin: 0 auto 42px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 560px;
+    margin-bottom: 68px;
+  }
+
+  @media (min-width: $laptop-width) {
+    max-width: 640px;
+  }
+}
+
+.posting__form {
+  box-sizing: border-box;
+  max-width: 940px;
+  margin: 0 auto;
+}

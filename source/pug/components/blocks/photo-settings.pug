@@ -1,0 +1,20 @@
+mixin photo-settings
+  fieldset.photo-settings&attributes(attributes)
+    legend.visually-hidden Редактирование фотографии
+    ul.photo-settings__navigation
+      li.photo-settings__navigation-item
+        a.photo-settings__navigation-link.photo-settings__navigation-link--crop(href='#posting-form-crop')
+          span.visually-hidden Кадрирование
+      li.photo-settings__navigation-item
+        a.photo-settings__navigation-link.photo-settings__navigation-link--fill(href='#posting-form-fill')
+          span.visually-hidden Заливка
+      li.photo-settings__navigation-item
+        a.photo-settings__navigation-link.photo-settings__navigation-link--contrast(href='#posting-form-contrast')
+          span.visually-hidden Контрастность
+    ul.photo-settings__list
+      li.photo-settings__item#posting-form-crop
+        +range('Кадрирование', 'crop')(class='photo-settings__range range--with-icon_crop')
+      li.photo-settings__item#posting-form-fill
+        +range('Заливка', 'fill', 0, 0, 1, 0.01)(class='photo-settings__range range--with-icon_fill')
+      li.photo-settings__item#posting-form-contrast
+        +range('Контрастность', 'contrast', 1, 0, 5, 0.05)(class='photo-settings__range range--with-icon_contrast')

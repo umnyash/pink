@@ -2,6 +2,8 @@ import { initMainNavigation } from './main-navigation.js';
 import { initReviewsSlider } from './reviews-slider.js';
 import { initSliderTable } from './slider-table.js';
 import { initPosts } from './posts.js';
+import { initPhotoSettings } from './photo-settings.js';
+import { initPostingForm } from './posting-form.js';
 
 import {
   getSliderPaginationButtonCreator,
@@ -27,3 +29,7 @@ document.querySelectorAll('.slider-table').forEach((table) => initSliderTable(
 document.querySelectorAll('#office-location-map').forEach(initContactsMap);
 
 document.querySelectorAll('.posts').forEach(initPosts);
+
+document.querySelectorAll('.photo-settings').forEach(initPhotoSettings);
+
+document.querySelectorAll('.posting-form').forEach(initPostingForm);

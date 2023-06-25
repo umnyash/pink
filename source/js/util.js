@@ -1,4 +1,12 @@
+const IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg', 'webp', 'gif'];
+
 const checkMinWidth = (width) => window.matchMedia(`(min-width: ${width}px)`).matches;
+
+const isImage = (file) => {
+  const fileName = file.name.toLowerCase();
+
+  return IMAGE_FILE_TYPES.some((type) => fileName.endsWith(type));
+};
 
 const setOnWindowResizeWidth = (cb) => {
   let windowWidth = document.documentElement.clientWidth;
@@ -15,5 +23,6 @@ const setOnWindowResizeWidth = (cb) => {
 
 export {
   checkMinWidth,
+  isImage,
   setOnWindowResizeWidth
 };

@@ -1,0 +1,142 @@
+.posting-form {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 300px 1fr;
+    column-gap: 48px;
+  }
+
+  @media (min-width: $laptop-width) {
+    column-gap: 88px;
+  }
+}
+
+.posting-form__photo-upload {
+  display: grid;
+  width: calc(100% - $page-side-padding - $page-side-padding);
+  max-width: 300px;
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  border: none;
+  margin: 0 auto 42px;
+
+  &::after {
+    content: "";
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 1;
+    background-color: var(--accent-color);
+    opacity: var(--fill-level, 0);
+    pointer-events: none;
+    transition: opacity $little-interaction-duration $little-interaction-timing-function;
+  }
+
+  @media (min-width: $tablet-width) {
+    grid-row: 1 / 3;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.posting-form__photo-field {
+  grid-area: 1 / 1 / 2 / 2;
+  display: grid;
+  padding: 20px;
+  border: 2px dashed currentColor;
+  align-content: center;
+  justify-items: center;
+  opacity: 0.3;
+  cursor: pointer;
+  transition:
+    color $little-interaction-duration $little-interaction-timing-function,
+    opacity $little-interaction-duration $little-interaction-timing-function;
+
+  &:focus-within,
+  &:hover {
+    color: var(--accent-color);
+    opacity: 1;
+  }
+}
+
+.posting-form__photo-field-label {
+  padding: 8px 16px;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+  margin: 32px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.posting-form__photo-field-control {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+
+  &::file-selector-button {
+    display: none;
+  }
+}
+
+.posting-form__photo {
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  filter: contrast(var(--contrast-level, 1));
+  transition: opacity $little-interaction-duration $little-interaction-timing-function;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.posting-form__photo-upload:hover::after,
+.posting-form__photo-upload:focus-within::after,
+.posting-form__photo-upload:hover .posting-form__photo,
+.posting-form__photo-upload:focus-within .posting-form__photo {
+  opacity: 0.3;
+}
+
+.posting-form__photo-settings {
+  margin: 0 0 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 80px;
+  }
+}
+
+.posting-form__buttons {
+  display: grid;
+  padding: 0;
+  border: none;
+  margin: 0 $page-side-padding;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px 20px;
+
+  @media (min-width: $tablet-width) {
+    align-self: end;
+    margin: 0;
+    gap: 24px 44px;
+  }
+}
+
+.posting-form--decorated {
+  padding: 20px 0 40px;
+  background-color: var(--background-additional-color);
+
+  @media (min-width: $tablet-width) {
+    padding: 56px 20px;
+  }
+
+  @media (min-width: $laptop-width) {
+    padding-right: 60px;
+    padding-left: 80px;
+  }
+}

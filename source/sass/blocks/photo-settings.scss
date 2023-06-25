@@ -1,0 +1,136 @@
+.photo-settings {
+  padding: 0;
+  border: none;
+}
+
+.photo-settings__navigation {
+  display: grid;
+  padding: 0;
+  margin: 0 $page-side-padding 32px;
+  list-style: none;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px 36px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.photo-settings__navigation-item {
+  &:nth-child(3n - 2) {
+    justify-self: end;
+  }
+}
+
+.photo-settings__navigation-link {
+  display: block;
+  color: currentColor;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color $little-interaction-duration $little-interaction-timing-function;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    background-color: currentColor;
+    opacity: 0.3;
+    transition:
+      background-color $little-interaction-duration $little-interaction-timing-function,
+      opacity $little-interaction-duration $little-interaction-timing-function;
+  }
+
+  &:hover::before {
+    background-color: var(--accent-color);
+  }
+
+  &:focus-visible {
+    outline-color: var(--accent-color);
+  }
+
+  &--current::before {
+    background-color: var(--accent-color);
+    opacity: 1;
+  }
+
+  &--crop {
+    width: 44px;
+    height: 44px;
+
+    &::before {
+      mask-image: url("../img/icons/stack.svg#photo_crop");
+    }
+  }
+
+  &--fill {
+    width: 48px;
+    height: 43px;
+
+    &::before {
+      mask-image: url("../img/icons/stack.svg#photo_fill");
+    }
+  }
+
+  &--contrast {
+    width: 32px;
+    height: 32px;
+
+    &::before {
+      mask-image: url("../img/icons/stack.svg#photo_contrast");
+    }
+  }
+}
+
+.photo-settings__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    row-gap: 24px;
+    margin-top: 8px;
+  }
+
+  @media (min-width: $laptop-width) {
+    row-gap: 16px;
+    margin-top: 0;
+  }
+}
+
+.photo-settings__item {
+  position: relative;
+  padding: 0 ($page-side-padding + 20px) 28px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.1;
+  }
+
+  @media (max-width: ($tablet-width - 1)) {
+    display: none;
+
+    &--current {
+      display: block;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 0 18px 24px 4px;
+  }
+
+  @media (min-width: $laptop-width) {
+    padding: 0 28px 12px 0;
+
+    &:last-child::after {
+      background-color: transparent;
+    }
+  }
+}
