@@ -19,7 +19,7 @@ mixin post__content(post)
   .post__text-content
     footer.post__footer
       p.post__author= post.author
-      time.post__date= `(${post.date})`
+      time.post__date(datetime='2023-06-26')= `(${post.date})`
     blockquote.post__text= post.text
     +post-rating(post.likes)(class='post__rating')
 
