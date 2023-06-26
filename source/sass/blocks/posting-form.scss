@@ -25,7 +25,7 @@
     grid-area: 1 / 1 / 2 / 2;
     z-index: 1;
     background-color: var(--accent-color);
-    opacity: var(--fill-level, 0);
+    filter: opacity(var(--fill-level, 0));
     pointer-events: none;
     transition: opacity $little-interaction-duration $little-interaction-timing-function;
   }
