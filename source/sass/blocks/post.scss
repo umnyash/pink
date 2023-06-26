@@ -117,6 +117,7 @@
   .post__photo-link {
     grid-row: 1 / 2;
     grid-column: 1 / -1;
+    justify-self: center;
   }
 
   .post__photo-wrapper {
