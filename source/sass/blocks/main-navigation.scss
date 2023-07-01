@@ -26,7 +26,15 @@
   padding: 15px 20px;
   text-decoration: none;
   color: inherit;
-  transition: color $little-interaction-duration linear;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  transition:
+    color $little-interaction-duration $little-interaction-timing-function,
+    outline-color $little-interaction-duration $little-interaction-timing-function;
+
+  &:focus-visible {
+    outline-color: var(--accent-color);
+  }
 
   &:hover {
     color: var(--accent-color);
@@ -44,6 +52,7 @@
   @media (min-width: $laptop-width) {
     padding: 12px 0;
     border-bottom: 2px solid transparent;
+    outline-offset: 4px;
   }
 }
 
