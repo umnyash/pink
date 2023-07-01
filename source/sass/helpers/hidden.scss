@@ -1,0 +1,18 @@
+/*
+ * --m – скрывать только на мобильной (m) ширине
+ * --m-t – скрывать только на мобильной (m) и планшетной (t) ширине
+ */
+
+.hidden {
+  &--m {
+    @media (max-width: ($tablet-width - 1)) {
+      display: none;
+    }
+  }
+
+  &--m-t {
+    @media (max-width: ($laptop-width - 1)) {
+      display: none;
+    }
+  }
+}

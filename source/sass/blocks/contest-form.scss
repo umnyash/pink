@@ -1,0 +1,109 @@
+.contest-form {
+  display: grid;
+  font-size: 18px;
+  line-height: 30px;
+
+  @media (max-width: ($tablet-width - 1)) {
+    grid-template-areas:
+      "full-name"
+      "checklist"
+      "contacts"
+      "choice"
+      "comment"
+      "footer";
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-template-columns: 1fr 1fr;
+    gap: 58px 70px;
+  }
+}
+
+[class*="contest-form__fieldset"] {
+  @media (min-width: $tablet-width) {
+    margin: 0 20px 58px;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+}
+
+.contest-form__fieldset-full-name {
+  @media (max-width: ($tablet-width - 1)) {
+    grid-area: full-name;
+    margin: 0 20px 40px;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-column: 1 / 2;
+    align-self: end;
+  }
+}
+
+.contest-form__fieldset-choice {
+  @media (max-width: ($tablet-width - 1)) {
+    grid-area: choice;
+    margin: 0 0 38px;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-column: 2 / 3;
+  }
+}
+
+.contest-form__fieldset-contacts {
+  @media (max-width: ($tablet-width - 1)) {
+    grid-area: contacts;
+    margin: 0 20px 40px;
+  }
+}
+
+.contest-form__fieldset-checklist {
+  @media (max-width: ($tablet-width - 1)) {
+    grid-area: checklist;
+    margin: 0 0 38px;
+  }
+}
+
+.contest-form__fieldset-comment {
+  @media (max-width: ($tablet-width - 1)) {
+    margin: 0 20px 40px;
+  }
+}
+
+.contest-form__footer {
+  display: grid;
+  margin: 8px 20px 0;
+  row-gap: 34px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    grid-auto-flow: column;
+    column-gap: 60px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-column: 1 / -1;
+    margin: 8px 0 0;
+  }
+}
+
+.contest-form__submit-button {
+  @media (min-width: $tablet-width) {
+    min-width: 300px;
+  }
+}
+
+.contest-form__prompt {
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.contest-form__prompt-accent-text {
+  color: var(--accent-color);
+}

@@ -95,7 +95,8 @@
   }
 
   @media (min-width: $laptop-width) {
-    max-width: 640px;
+    // max-width: 640px;
+    max-width: 644px;
     margin-bottom: 88px;
   }
 }
@@ -125,5 +126,18 @@
 
   @media (min-width: $laptop-width) {
     margin-bottom: 100px;
+  }
+}
+
+.page__contest-form {
+  margin-bottom: 56px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 84px;
+  }
+
+  @media (min-width: $laptop-width) {
+    width: 940px;
+    margin: 0 auto 70px;
   }
 }

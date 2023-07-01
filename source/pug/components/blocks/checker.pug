@@ -1,0 +1,3 @@
+mixin checker(label, name, type, value, isChecked)
+  label.checker&attributes(attributes)= label
+    input.checker__control(name= name type= type value= value checked= isChecked ? true : false)

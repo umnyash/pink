@@ -1,0 +1,104 @@
+.fieldset {
+  display: grid;
+  padding: 0;
+  border: none;
+  row-gap: 16px;
+
+  @media (min-width: $tablet-width) {
+    border: 2px solid var(--border-color);
+    border-radius: 3px;
+  }
+}
+
+.fieldset__inner {
+  display: grid;
+  row-gap: 23px;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 52px;
+  }
+}
+
+.fieldset__heading {
+  float: left;
+  justify-self: center;
+  box-sizing: border-box;
+  padding: 0 24px;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  @media (min-width: $tablet-width) {
+    float: none;
+  }
+}
+
+.fieldset--decorated_m {
+  @media (max-width: ($tablet-width - 1)) {
+    background-color: var(--background-additional-color);
+    padding: 40px 20px;
+  }
+}
+
+.fieldset--simple {
+  border: none;
+}
+
+.fieldset--checkboxes {
+  row-gap: 37px;
+
+  .fieldset__inner {
+    row-gap: 43px;
+
+    @media (min-width: $tablet-width) {
+      padding: 44px 58px 48px;
+    }
+
+    @media (min-width: 760px) {
+      grid-template-columns: repeat(2, auto);
+      column-gap: 44px;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $laptop-width) {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+}
+
+.fieldset--radiobuttons {
+  row-gap: 33px;
+
+  .fieldset__inner {
+    row-gap: 34px;
+
+    @media (min-width: $tablet-width) {
+      padding: 44px 58px 52px;
+    }
+  }
+}
+
+.fieldset--texts {
+  .fieldset__inner {
+    @media (min-width: $tablet-width) {
+      padding: 36px 58px 33px;
+      row-gap: 35px;
+    }
+
+    @media (min-width: $laptop-width) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 70px;
+    }
+  }
+}
+
+.fieldset--comment {
+  .fieldset__inner {
+    @media (min-width: $tablet-width) {
+      padding: 37px 58px 51px;
+    }
+  }
+}

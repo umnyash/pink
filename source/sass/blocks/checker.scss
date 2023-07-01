@@ -1,0 +1,73 @@
+.checker {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.checker__control {
+  order: -1;
+  appearance: none;
+  display: grid;
+  box-sizing: border-box;
+  border: 2px solid currentColor;
+  margin: 0;
+  place-items: center;
+  color: var(--border-color);
+  background-color: var(--background-color);
+  outline: none;
+  transition: color $little-interaction-duration $little-interaction-timing-function;
+
+  &::before {
+    content: "";
+    transform: scale(0);
+    transition: transform $little-interaction-duration $little-interaction-timing-function;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:enabled:hover {
+    color: inherit;
+  }
+
+  &:focus-visible {
+    color: var(--accent-color);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.checker__control[type="checkbox"] {
+  width: 39px;
+  height: 39px;
+  border-radius: 3px;
+  margin-right: 20px;
+
+  &::before {
+    width: 22px;
+    height: 16px;
+    background: url("../img/icons/stack.svg#form_tick") no-repeat;
+  }
+}
+
+.checker__control[type="radio"] {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  margin-right: 28px;
+
+  &::before {
+    width: 15px;
+    height: 15px;
+    border-radius: inherit;
+    background: var(--accent-color);
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-right: 20px;
+  }
+}

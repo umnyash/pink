@@ -1,0 +1,6 @@
+mixin fieldset(heading, headingClass)
+  fieldset.fieldset&attributes(attributes)
+    if heading
+      legend.fieldset__heading(class= headingClass)!= heading
+    .fieldset__inner
+      block

@@ -1,0 +1,36 @@
+.textarea__control {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: none;
+  padding: 14px 20px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  transition: border-color $little-interaction-duration $little-interaction-timing-function;
+
+  &::placeholder {
+    opacity: 1;
+    color: inherit;
+  }
+
+  &:enabled:hover {
+    border-color: currentColor;
+  }
+
+  &:focus-visible {
+    border-color: var(--accent-color);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  @media (min-width: $laptop-width) {
+    min-height: 128px;
+  }
+}

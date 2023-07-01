@@ -1,0 +1,122 @@
+.textfield__inner {
+  display: grid;
+  row-gap: 11px;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 16px;
+  }
+}
+
+.textfield__label {
+  margin-left: 24px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  &::after {
+    content: ":";
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-left: 20px;
+  }
+}
+
+.textfield__control {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 20px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  transition: border-color $little-interaction-duration $little-interaction-timing-function;
+
+  &::placeholder {
+    opacity: 1;
+    color: inherit;
+  }
+
+  &:enabled:hover {
+    border-color: currentColor;
+  }
+
+  &:focus-visible {
+    border-color: var(--accent-color);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+[class*="textfield--with-icon"] {
+  .textfield__control-wrapper {
+    @media (min-width: $tablet-width) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+    }
+
+    &::after {
+      content: "";
+      width: 60px;
+      background: var(--border-color) no-repeat 50% 50% / 20px auto;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+
+  .textfield__control {
+    @media (min-width: $tablet-width) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.textfield--with-icon--phone .textfield__control-wrapper::after {
+  background-image: url("../img/icons/stack.svg#phone");
+  background-size: 20px 19px;
+}
+
+.textfield--with-icon--mail .textfield__control-wrapper::after {
+  background-image: url("../img/icons/stack.svg#mail");
+  background-size: 18px 13px;
+}
+
+/*
+ * Изначально (на мобильной ширине) подписи всегда сверху,
+ * а с планшетной ширины могу располагаться в других местах
+ * в зависимости от модификатора.
+ */
+
+.textfield--label-position_left {
+  .textfield__inner {
+    @media (min-width: $tablet-width) {
+      grid-template-columns: auto 1fr;
+      column-gap: 20px;
+      align-items: center;
+    }
+  }
+
+  .textfield__label {
+    @media (min-width: $tablet-width) {
+      margin: 0;
+    }
+  }
+}
+
+.textfield--label-position_under {
+  .textfield__label {
+    @media (min-width: $tablet-width) {
+      order: 1;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
