@@ -29,8 +29,8 @@
     mask-size: 100%, 0;
     transform-origin: right center;
     transition:
-      width calc($main-header-navigation-opening-duration / 2) step-end,
-      mask-size calc($main-header-navigation-opening-duration / 2) step-end,
+      width calc($main-header-navigation-animation-duration / 2) step-end,
+      mask-size calc($main-header-navigation-animation-duration / 2) step-end,
       background-color $little-interaction-duration $little-interaction-timing-function,
       opacity $little-interaction-duration $little-interaction-timing-function;
   }
@@ -54,6 +54,6 @@
   }
 
   &--animated::after {
-    animation: clench-unclench $main-header-navigation-opening-duration ease-in-out;
+    animation: clench-unclench $main-header-navigation-animation-duration ease-in-out;
   }
 }

@@ -1,4 +1,5 @@
 .main-navigation {
+  position: relative;
   padding: 0;
   text-align: center;
   font-size: 18px;
@@ -10,6 +11,16 @@
     font-weight: 700;
     text-transform: uppercase;
     background-color: var(--background-alter-additional-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: calc(100% + 1px); // 1px – толщина рамки сверху блока main-navigation
+      left: 0;
+      height: 100vh; // Высота должна быть не меньше высоты элемента main-header__inner.
+      background-color: inherit;
+    }
   }
 
   @media (min-width: $laptop-width) {
