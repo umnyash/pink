@@ -1,5 +1,5 @@
 mixin contest-form
-  form.contest-form(action='https://echo.htmlacademy.ru' method='post' autocomplete='off')&attributes(attributes)
+  form.contest-form(action='https://echo.htmlacademy.ru' method='post' autocomplete='off' target='_blank')&attributes(attributes)
     +fieldset(class='contest-form__fieldset-full-name fieldset--simple')
       +textfield('Фамилия', 'surname', 'text', '', 'Укажите фамилию *', true)(class='textfield--label-position_left')
       +textfield('Имя', 'name', 'text', '', 'Введите ваше имя *', true)(class='textfield--label-position_left')
