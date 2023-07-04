@@ -13,6 +13,10 @@ html.page(class= pageClass lang='ru')
     if (pageClass === 'index-page')
       script(src='https://api-maps.yandex.ru/2.1/?apikey=e6c045b8-c60b-415c-82d4-b4adf6e237da&lang=ru_RU')
     title= title
+    link(rel='icon' href='favicon.ico')
+    link(rel='icon' href='img/favicons/favicon.svg' type='image/svg+xml')
+    link(rel='apple-touch-icon' href='img/favicons/favicon-180.png')
+    link(rel='manifest' href='manifest.webmanifest')
   body.page__body
     include ../components/components
     .page__inner
