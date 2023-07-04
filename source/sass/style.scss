@@ -2,6 +2,9 @@
 @import "global/variables.scss";
 @import "global/*.scss";
 
+// Mixins
+@import "mixins/**/*.scss";
+
 // Blocks
 @import "blocks/**/*.scss";
 
