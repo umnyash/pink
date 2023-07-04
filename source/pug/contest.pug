@@ -9,5 +9,9 @@ block content
   +lead('Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="hidden hidden--m">Пожалуйста, заполните форму ниже:</span>')(class='page__lead')
   +contest-form(class='page__contest-form')
 
+append modals
+  +modal(data-modal='alert')
+    +alert(class='modal__alert')
+
 prepend scripts
   script(src='vendor/pristine/pristine.min.js')

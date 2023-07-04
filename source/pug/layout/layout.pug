@@ -26,7 +26,6 @@ html.page(class= pageClass lang='ru')
       main.page__content
         block content
       +main-footer(class='page__main-footer')
-    +modal(data-modal='alert')
-      +alert(class='modal__alert')
+    block modals
     block scripts
       script(src='js/main.js')
