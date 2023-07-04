@@ -1,9 +1,22 @@
+/*
+ * Основаня структура страницы
+ */
+
 .page {
   --main-header-offset-height: 64px;
 
   @media (min-width: $tablet-width) {
     --main-header-offset-height: 110px;
   }
+}
+
+.page__inner {
+  display: grid;
+  box-sizing: border-box;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  overflow-y: auto;
 }
 
 .page__main-header {
@@ -17,15 +30,44 @@
   margin-top: calc(var(--main-header-offset-height) * -1);
 }
 
-.page__hero {
+.page__main-footer {
   margin-bottom: 40px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 48px;
+    margin-bottom: 36px;
   }
 
   @media (min-width: $laptop-width) {
-    margin-bottom: 62px;
+    margin-bottom: 70px;
+  }
+}
+
+/*
+ * Блоки (в алфавитном порядке)
+ */
+
+.page__contacts {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 70px;
+  }
+}
+
+.page__contest-form {
+  margin-bottom: 56px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 84px;
+  }
+
+  @media (min-width: $laptop-width) {
+    width: 940px;
+    margin: 0 auto 70px;
   }
 }
 
@@ -41,47 +83,23 @@
   }
 }
 
-.page__reviews {
-  margin-bottom: 40px;
+.page__header {
+  margin-bottom: 44px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 16px;
-  }
-
-  @media (min-width: $laptop-width) {
-    margin-bottom: 32px;
+    margin-bottom: 92px;
   }
 }
 
-.page__prices {
-  margin-bottom: 40px;
-
-  @media (min-width: $laptop-width) {
-    margin-bottom: 60px;
-  }
-}
-
-.page__contacts {
+.page__hero {
   margin-bottom: 40px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 36px;
+    margin-bottom: 48px;
   }
 
   @media (min-width: $laptop-width) {
-    margin-bottom: 70px;
-  }
-}
-
-.page__main-footer {
-  margin-bottom: 40px;
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: 36px;
-  }
-
-  @media (min-width: $laptop-width) {
-    margin-bottom: 70px;
+    margin-bottom: 62px;
   }
 }
 
@@ -100,22 +118,6 @@
   }
 }
 
-.page__header {
-  margin-bottom: 44px;
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: 92px;
-  }
-}
-
-.page__posts {
-  margin-bottom: 40px;
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: 64px;
-  }
-}
-
 .page__posting {
   margin-bottom: 40px;
 
@@ -128,15 +130,30 @@
   }
 }
 
-.page__contest-form {
-  margin-bottom: 56px;
+.page__posts {
+  margin-bottom: 40px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 84px;
+    margin-bottom: 64px;
+  }
+}
+
+.page__prices {
+  margin-bottom: 40px;
+
+  @media (min-width: $laptop-width) {
+    margin-bottom: 60px;
+  }
+}
+
+.page__reviews {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
   }
 
   @media (min-width: $laptop-width) {
-    width: 940px;
-    margin: 0 auto 70px;
+    margin-bottom: 32px;
   }
 }

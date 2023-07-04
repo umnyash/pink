@@ -1,5 +1,10 @@
 const IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg', 'webp', 'gif'];
 
+const Keys = Object.freeze({
+  ESCAPE: 'Escape',
+  ESC: 'Esc',
+});
+
 const checkMinWidth = (width) => window.matchMedia(`(min-width: ${width}px)`).matches;
 
 const isImage = (file) => {
@@ -21,8 +26,11 @@ const setOnWindowResizeWidth = (cb) => {
   });
 };
 
+const isEscEvent = (evt) => evt.key === Keys.ESCAPE || evt.key === Keys.ESC;
+
 export {
   checkMinWidth,
   isImage,
-  setOnWindowResizeWidth
+  setOnWindowResizeWidth,
+  isEscEvent
 };

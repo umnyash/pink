@@ -1,0 +1,38 @@
+.modal {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  place-items: center;
+  overflow-y: auto;
+  opacity: 0;
+  transform: scale(0.8);
+  visibility: hidden;
+  transition:
+    opacity $modal-closing-duration ease-in,
+    transform $modal-closing-duration ease-in,
+    visibility $modal-closing-duration ease-in;
+
+  &--open {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    transition:
+      opacity $modal-opening-duration ease-out,
+      transform $modal-closing-duration ease-out,
+      visibility $modal-opening-duration ease-out;
+  }
+}
+
+.modal__alert {
+  max-width: 460px;
+
+  @media (min-width: $laptop-width) {
+    max-width: 780px;
+  }
+}

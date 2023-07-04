@@ -36,7 +36,7 @@
     background-color: var(--dark-special-color);
   }
 
-  &:disabled {
+  &:disabled:not(.button--pending) {
     background-color: var(--border-color);
     pointer-events: none;
   }
