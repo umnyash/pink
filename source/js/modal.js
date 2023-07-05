@@ -27,6 +27,12 @@ const initModal = (modal) => {
   if (modalCloseButton) {
     modalCloseButton.addEventListener('click', closeModal);
   }
+
+  modal.addEventListener('click', ({target}) => {
+    if (target === modal) {
+      closeModal();
+    }
+  });
 };
 
 export {
