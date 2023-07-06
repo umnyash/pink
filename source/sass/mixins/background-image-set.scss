@@ -1,0 +1,152 @@
+/* stylelint-disable */
+
+/*
+ * Вспомогательная функция для проверки наличия элемента в Sass-списке.
+ * Похожа на Array.prototype.includes() в JavaScript.
+ */
+@function includes($value, $list) {
+  @each $item in $list {
+    @if $value == $item {
+      @return true;
+    }
+  }
+
+  @return false;
+}
+
+/*
+ * Вспомогательная функция для формирования списка форматов переданных изображений.
+ */
+@function getImageFormats($images) {
+  $formats: ();
+
+  @each $image in $images {
+    $imageFormat: nth($image, 2);
+
+    @if not includes($imageFormat, $formats) {
+      $formats: append($formats, $imageFormat);
+    }
+  }
+
+  @return $formats;
+}
+
+/*
+ * Вспомогательный миксин.
+ * Из всего списка изображений, выбирает изображения определённого формата,
+ * и формирует CSS-правила для подключения их в качестве фона.
+ */
+@mixin background-image-set-filtered-by-format($images, $targetFormat) {
+  @each $image in $images {
+    $imagePath: nth($image, 1);
+    $imageFormat: nth($image, 2);
+    $imageTargetResolution: nth($image, 3);
+
+    @if ($imageFormat == $targetFormat) {
+      @if ($imageTargetResolution == 1) {
+        background-image: url("#{$imagePath}.#{$imageFormat}");
+      } @else {
+        @media (min-resolution: #{$imageTargetResolution}dppx) {
+          background-image: url("#{$imagePath}@#{$imageTargetResolution}x.#{$imageFormat}");
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Главный миксин.
+ * Подключает фоновые изображения с помощью вспомогательного миксина.
+ * Изображения в недефолтном формате оборачивает в эт-правило @supports.
+ */
+@mixin background-image-set($images...) {
+  $imageFormats: getImageFormats($images);
+  $imageDefaultFormat: nth($imageFormats, 1);
+
+  @each $format in $imageFormats {
+    @if ($format == $imageDefaultFormat) {
+      @include background-image-set-filtered-by-format($images, $format);
+    } @else {
+      @supports (background-image: url(image.#{$format})) {
+        @include background-image-set-filtered-by-format($images, $format);
+      }
+    }
+  }
+}
+
+/*
+ * Пример использования.
+ *
+ * Нужно задать фоновое изображение для экранов 1x, 2x и 3x плотностей в форматах jpg
+ * и webp – для браузеров, которые поддерживают этот формат фоновых изображений.
+ *
+ * Имеющиеся URL изображений:
+ * ../img/night-sky.jpg
+ * ../img/night-sky@2x.jpg
+ * ../img/night-sky@3x.jpg
+ * ../img/night-sky.webp
+ * ../img/night-sky@2x.webp
+ * ../img/night-sky@3x.webp
+ *
+ * В агрументы миксина нужно передать данные об изображениях в формате
+ * "путь к изображению без суффикса и расширения" "формат/расширение" "число: целевая плотность пикселей"
+ * Информация об изображениях должна передаваться от дефолтного формата в самом меньшем разрешении
+ * до самого редкоподдерживаемого формата в наибольшем разрешении.
+ * Последовательность важна!
+ *
+ * .selector {
+ *   @include background-image-set(
+ *     "../img/night-sky" "jpg" 1,
+ *     "../img/night-sky" "jpg" 2,
+ *     "../img/night-sky" "jpg" 3,
+ *     "../img/night-sky" "webp" 1,
+ *     "../img/night-sky" "webp" 2,
+ *     "../img/night-sky" "webp" 3
+ *   );
+ * }
+ *
+ * Результат:
+ *
+ * .selector {
+ *   background-image: url("../img/night-sky.jpg");
+ * }
+ * @media (min-resolution: 2dppx) {
+ *   .selector {
+ *     background-image: url("../img/night-sky@2x.jpg");
+ *   }
+ * }
+ * @media (min-resolution: 3dppx) {
+ *   .selector {
+ *     background-image: url("../img/night-sky@3x.jpg");
+ *   }
+ * }
+ * @supports (background-image: url("image.webp")) {
+ *   .selector {
+ *     background-image: url("../img/night-sky.webp");
+ *   }
+ *   @media (min-resolution: 2dppx) {
+ *     .selector {
+ *       background-image: url("../img/night-sky@2x.webp");
+ *     }
+ *   }
+ *   @media (min-resolution: 3dppx) {
+ *     .selector {
+ *       background-image: url("../img/night-sky@3x.webp");
+ *     }
+ *   }
+ * }
+ */
+
+/*
+ * Почему так сложно?
+ * Задачей было создать простой в использовании миксин, похожий на CSS-функцию image-set.
+ * И я последовал закону Теслера (пусть разработка миксина сложнее, зато проще использовать).
+ *
+ * В теории можно было бы обойтись всего одним циклом, но при этом каждое свойство background-image,
+ * подлкючающее изображение в формате, который требовал бы проверку поддержки,
+ * было бы обёртуто в своё личное эт-правило @supports.
+ *
+ * В данном варианте, формирование списка форматов и отдельные циклы для подключения изображений в каждом из них,
+ * позволили сгруппировать подключения изображений одного формата внутри одного эт-правила @supports.
+ * Это замедляет компиляцию, но уменьшает количество получающегося CSS-кода.
+ */
