@@ -13,6 +13,7 @@ import gulpIf from 'gulp-if';
 import gulpSass from 'gulp-sass';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
 import sassGlob from 'gulp-sass-glob';
 
 const sass = gulpSass(dartSass);
@@ -26,6 +27,7 @@ export default function processStyles() {
       autoprefixer(),
       csso()
     ]))
+    .pipe(rename('style.min.css'))
     .pipe(gulp.dest(paths.processStyles.dest, { sourcemaps: mode.isDev }))
     .pipe(gulpIf(mode.isDev, browser.stream()));
 }
