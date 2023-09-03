@@ -46,10 +46,10 @@
 }
 
 .button-image--heart {
-  background-image: url("../img/icons/stack.svg#heart-empty");
+  background-image: url("../img/icons.svg#heart-empty");
 
   &::after {
-    background-image: url("../img/icons/stack.svg#heart");
+    background-image: url("../img/icons.svg#heart");
   }
 }
 

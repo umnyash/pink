@@ -104,7 +104,7 @@
 
 .range--with-icon_crop::before {
   @media (min-width: $tablet-width) {
-    mask-image: url("../img/icons/stack.svg#photo_crop");
+    mask-image: url("../img/icons.svg#photo_crop");
     width: 22px;
   }
 
@@ -115,13 +115,13 @@
 
 .range--with-icon_fill::before {
   @media (min-width: $tablet-width) {
-    mask-image: url("../img/icons/stack.svg#photo_fill");
+    mask-image: url("../img/icons.svg#photo_fill");
   }
 }
 
 .range--with-icon_contrast::before {
   @media (min-width: $tablet-width) {
-    mask-image: url("../img/icons/stack.svg#photo_contrast");
+    mask-image: url("../img/icons.svg#photo_contrast");
     width: 16px;
     height: 16px;
   }

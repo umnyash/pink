@@ -4,7 +4,7 @@ $reviews-slider-desktop-padding-width: 100px;
   @media (min-width: $laptop-width) {
     position: relative;
     padding: 112px $reviews-slider-desktop-padding-width 0;
-    background: url("../img/icons/stack.svg#quotes") no-repeat center top / 80px 64px;
+    background: url("../img/icons.svg#quotes") no-repeat center top / 80px 64px;
 
     &::before,
     &::after {

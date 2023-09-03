@@ -59,7 +59,7 @@
     height: 44px;
 
     &::before {
-      mask-image: url("../img/icons/stack.svg#photo_crop");
+      mask-image: url("../img/icons.svg#photo_crop");
     }
   }
 
@@ -68,7 +68,7 @@
     height: 43px;
 
     &::before {
-      mask-image: url("../img/icons/stack.svg#photo_fill");
+      mask-image: url("../img/icons.svg#photo_fill");
     }
   }
 
@@ -77,7 +77,7 @@
     height: 32px;
 
     &::before {
-      mask-image: url("../img/icons/stack.svg#photo_contrast");
+      mask-image: url("../img/icons.svg#photo_contrast");
     }
   }
 }

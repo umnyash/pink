@@ -10,7 +10,7 @@ const initContactsMap = (id) => {
 
     const officeMarker = new ymaps.Placemark(OFFICE_COORDINATES, {}, { // eslint-disable-line
       iconLayout: 'default#image',
-      iconImageHref: 'img/icons/stack.svg#map_marker',
+      iconImageHref: 'img/icons.svg#map_marker',
       iconImageSize: [36, 36],
       iconImageOffset: [-18, -18]
     });

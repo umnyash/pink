@@ -25,7 +25,7 @@
     height: 100%;
     margin-left: auto;
     background-color: var(--background-color);
-    mask-image: url("../img/icons/stack.svg#burger"), url("../img/icons/stack.svg#x");
+    mask-image: url("../img/icons.svg#burger"), url("../img/icons.svg#x");
     mask-size: 100%, 0;
     transform-origin: right center;
     transition:

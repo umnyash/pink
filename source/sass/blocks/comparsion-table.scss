@@ -156,11 +156,11 @@ $comparsion-table-border-radius: ($comparsion-table-border-width + 1);
   }
 
   &--true::after {
-    background-image: url("../img/icons/stack.svg#comparsion-table_true");
+    background-image: url("../img/icons.svg#comparsion-table_true");
   }
 
   &--false::after {
-    background-image: url("../img/icons/stack.svg#comparsion-table_false");
+    background-image: url("../img/icons.svg#comparsion-table_false");
   }
 }
 

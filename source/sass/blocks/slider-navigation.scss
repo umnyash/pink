@@ -33,7 +33,7 @@
     display: block;
     height: 100%;
     background-color: currentColor;
-    mask-image: url("../img/icons/stack.svg#slider-arrow");
+    mask-image: url("../img/icons.svg#slider-arrow");
     opacity: 0.3;
     transition: opacity $little-interaction-duration $little-interaction-timing-function;
   }

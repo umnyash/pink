@@ -23,7 +23,7 @@ export default {
   createVectorStack: {
     src: `${pathSrc}/img/icons/**/*.svg`,
     watch: `${pathSrc}/img/icons/**/*.svg`,
-    dest: `${pathDest}/img/icons`
+    dest: `${pathDest}/img`
   },
 
   createWebp: {
