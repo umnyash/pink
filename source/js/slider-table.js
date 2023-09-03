@@ -1,5 +1,3 @@
-import { checkMinWidth, setOnWindowResizeWidth } from './util.js';
-
 const setSliderMode = (table) => {
   table.itself.classList.add(table.modeClass, 'swiper');
   table.body.classList.add('swiper-wrapper');
@@ -34,17 +32,9 @@ const resetSliderMode = (table) => {
 };
 
 const toggleTableMode = (table) => {
-  if (checkMinWidth(table.breakpoint)) {
-    if (!table.swiper) {
-      return;
-    }
-
+  if (table.swiper) {
     resetSliderMode(table);
   } else {
-    if (table.swiper) {
-      return;
-    }
-
     setSliderMode(table);
   }
 };
@@ -60,13 +50,19 @@ const initSliderTable = (tableElement, getPaginationButtonCreator, getPagination
     paginationButtonCreator: getPaginationButtonCreator(tableElement.dataset.slideName),
     paginationCurrentButtonDisabler: getPaginationCurrentButtonDisabler(pagination.children),
     modeClass: `${tableElement.dataset.tableClass}--slider`,
-    breakpoint: tableElement.dataset.sliderBreakpoint,
     columnGap: tableElement.dataset.columnGap,
     initialSlide: tableElement.dataset.initialSlide
   };
 
-  toggleTableMode(table);
-  setOnWindowResizeWidth(() => toggleTableMode(table));
+  const sliderBreakpointMediaQuery = window.matchMedia(`(max-width: ${tableElement.dataset.sliderBreakpoint}px)`);
+
+  if (sliderBreakpointMediaQuery.matches) {
+    setSliderMode(table);
+  }
+
+  sliderBreakpointMediaQuery.addEventListener('change', () => {
+    toggleTableMode(table);
+  });
 };
 
 export { initSliderTable };
