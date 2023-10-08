@@ -20,8 +20,8 @@ const initMainNavigation = (navigationElement) => {
       menuElement.classList.add('main-header__main-menu--animated');
     }
 
+    toggleButtonElement.ariaExpanded = toggleButtonElement.ariaExpanded === 'true' ? 'false' : 'true';
     navigationElement.classList.toggle('main-header__navigation--open');
-
   });
 };
 
