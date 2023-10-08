@@ -3,6 +3,7 @@ const initReviewsSlider = (sliderElement, getPaginationButtonCreator, getPaginat
   const paginationCurrentButtonDisabler = getPaginationCurrentButtonDisabler(pagination.children);
 
   new Swiper(sliderElement, { // eslint-disable-line
+    autoHeight: true,
     spaceBetween: 20,
     loop: true,
     navigation: {
