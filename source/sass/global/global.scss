@@ -17,18 +17,3 @@
   --dark: #000000;
   --blackout: rgba(0, 0, 0, 0.3);
 }
-
-body {
-  min-width: 320px;
-  margin: 0;
-  font-family: "Open Sans", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: var(--text-color);
-  background-color: var(--background-color);
-
-  @media (min-width: $laptop-width) {
-    font-size: 18px;
-    line-height: 30px;
-  }
-}
