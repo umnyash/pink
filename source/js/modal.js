@@ -4,11 +4,11 @@ let openedModal = null;
 
 function closeModal() {
   openedModal.classList.remove('modal--open');
-  document.removeEventListener('keydown', onModalEcsEvent);
+  document.removeEventListener('keydown', onModalEscEvent);
   openedModal = null;
 }
 
-function onModalEcsEvent(evt) {
+function onModalEscEvent(evt) {
   if(isEscEvent(evt)) {
     evt.preventDefault();
     closeModal();
@@ -17,7 +17,7 @@ function onModalEcsEvent(evt) {
 
 const openModal = (modal) => {
   modal.classList.add('modal--open');
-  document.addEventListener('keydown', onModalEcsEvent);
+  document.addEventListener('keydown', onModalEscEvent);
   openedModal = modal;
 };
 
