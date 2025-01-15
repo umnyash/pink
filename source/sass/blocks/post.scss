@@ -72,6 +72,10 @@
 .post__author {
   display: inline;
   font-weight: 700;
+
+  &::after {
+    content: "\0020";
+  }
 }
 
 .post__date {
